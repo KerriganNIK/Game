@@ -15,8 +15,8 @@ namespace Game
     public partial class Form1 : Form
     {
         Game1 game1;
-        Game2 game2; //Никита1
-        Game3 game3; //Никита1
+        Game2 game2;
+        Game3 game3;
         public bool Need { get; set; }
         public Form1()
         {
