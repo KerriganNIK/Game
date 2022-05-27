@@ -116,5 +116,35 @@ namespace Game
 
             Form.GameThree();
         }
+
+        public async void CutsceneFinal()
+        {
+            List<Bitmap> images = new List<Bitmap>();
+            images.Add(Properties.Resources.Фон);
+            images.Add(Properties.Resources.Жемчужина);
+            images.Add(Properties.Resources._2месяца);
+            images.Add(Properties.Resources.Лежит);
+            images.Add(Properties.Resources.Титры1);
+            images.Add(Properties.Resources.Титры2);
+            images.Add(Properties.Resources.Титры3);
+            images.Add(Properties.Resources.Титры4);
+            images.Add(Properties.Resources.Титры5);
+
+            foreach (var el in images)
+            {
+                Form.BackgroundImage = el;
+                await Task.Delay(2500);
+                if (Form.Need == true)
+                {
+                    Form.Need = false;
+                    break;
+                }
+            }
+
+            Form.button16.Visible = false;
+            Form.button16.Enabled = false;
+
+            Application.Restart();
+        }
     }
 }
