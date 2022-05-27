@@ -36,7 +36,7 @@ namespace Game
         public void GameTwo() => game2.StartGame();
         public void GameThree() => game3.StartGame();
 
-        public void Form1_KeyDown_1(object sender, KeyEventArgs e) //Макс1
+        public void Form1_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == (char)Keys.Escape)
             {
