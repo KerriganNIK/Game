@@ -13,6 +13,9 @@ namespace Game
         public TextBox textboxFinal { get; set; }
         public Form1 Form { get; private set; }
 
+        private bool flag;
+        const string result = "ЖЕМЧУЖИНАВПОРТУ";
+
         public Game2(Form1 form) 
         {
             Form = form;
@@ -67,6 +70,57 @@ namespace Game
             buttonFinal.Enabled = false;
             textboxFinal.Visible = false;
             textboxFinal.Enabled = false;
+        }
+
+        public void StartGame()
+        {
+            Form.BackgroundImage = Properties.Resources.Папка;
+
+            buttonСoup.Visible = true;
+            buttonСoup.Enabled = true;
+            buttonFinal.Visible = true;
+            buttonFinal.Enabled = true;
+            textboxFinal.Visible = true;
+            textboxFinal.Enabled = true;
+
+        }
+
+        public void buttonСoup_Click(object sender, EventArgs args)
+        {
+            if (flag == false)
+            {
+                Form.BackgroundImage = Properties.Resources.Список;
+                buttonСoup.Text = "Посмотреть шифр";
+                flag = true;
+            }
+            else
+            {
+                Form.BackgroundImage = Properties.Resources.Папка;
+                buttonСoup.Text = "Посмотреть листок";
+                flag = false;
+            }
+        }
+
+        public void buttonFinal_Click(object sender, EventArgs args)
+        {
+            string word = textboxFinal.Text;
+
+            if (result == word.Replace(" ", "").ToUpper())
+            {
+                buttonСoup.Visible = false;
+                buttonСoup.Enabled = false;
+                buttonFinal.Visible = false;
+                buttonFinal.Enabled = false;
+                textboxFinal.Visible = false;
+                textboxFinal.Enabled = false;
+
+                CutScene cutScene = new CutScene(Form);
+                cutScene.Cutscene3();
+            }
+            else
+            {
+                MessageBox.Show("Шифр не верный");
+            }
         }
     }
 }
