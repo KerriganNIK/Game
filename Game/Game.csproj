@@ -239,6 +239,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game1.cs" />
+    <Compile Include="Game2.cs" />
+    <Compile Include="Game3.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuPause.cs">
       <SubType>Form</SubType>
