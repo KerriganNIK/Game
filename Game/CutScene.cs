@@ -41,7 +41,7 @@ namespace Game
             {
                 Form.BackgroundImage = el;
                 await Task.Delay(2000);
-                if (Form.Need == true) //Никита2
+                if (Form.Need == true)
                 {
                     Form.Need = false;
                     break;
@@ -52,6 +52,39 @@ namespace Game
             Form.button16.Enabled = false;
 
             Form.GameOne();
+        }
+
+        public async void Cutscene2()
+        {
+            List<Bitmap> images = new List<Bitmap>();
+            images.Add(Properties.Resources.Фон);
+            images.Add(Properties.Resources.Сейфнет);
+            images.Add(Properties.Resources.Сейфда);
+            images.Add(Properties.Resources.Сейфоткрыт);
+            images.Add(Properties.Resources.Похоже_на_шифр);
+            images.Add(Properties.Resources.Попробую_расшифровать);
+            images.Add(Properties.Resources.Уровень2);
+
+            foreach (var el in images)
+            {
+                if (Form.Need == true)
+                {
+                    Form.Need = false;
+                    break;
+                }
+                Form.BackgroundImage = el;
+                await Task.Delay(2000);
+                if (Form.Need == true)
+                {
+                    Form.Need = false;
+                    break;
+                }
+            }
+
+            Form.button16.Visible = false;
+            Form.button16.Enabled = false;
+
+            Form.GameTwo();
         }
     }
 }
