@@ -27,6 +27,8 @@ namespace Game
             mainMenu.StartGame();
 
             game1 = new Game1(this);
+            game2 = new Game2(this);
+            game3 = new Game3(this);
         }
         public void button0_Click(object sender, EventArgs e) => game1.button0_Click(sender, e);
         public void button16_Click(object sender, EventArgs e) => Need = true; 
