@@ -36,6 +36,22 @@ namespace Game
         public void GameTwo() => game2.StartGame();
         public void GameThree() => game3.StartGame();
 
+        public void Form1_KeyDown_1(object sender, KeyEventArgs e) //Макс1
+        {
+            if (e.KeyValue == (char)Keys.Escape)
+            {
+                MenuPause menuPause = new MenuPause();
+                menuPause.ShowDialog();
+            }
 
+            if (e.KeyValue == (char)Keys.F2)
+            {
+                tableLayoutPanel1.Visible = false;
+                tableLayoutPanel1.Enabled = false;
+
+                CutScene cutScene = new CutScene(this);
+                cutScene.Cutscene2();
+            }
+        }
     }
 }
