@@ -86,5 +86,35 @@ namespace Game
 
             Form.GameTwo();
         }
+
+        public async void Cutscene3()
+        {
+            List<Bitmap> images = new List<Bitmap>();
+            images.Add(Properties.Resources.Фон);
+            images.Add(Properties.Resources.Где);
+            images.Add(Properties.Resources.Едет);
+            images.Add(Properties.Resources.Frame1);
+            images.Add(Properties.Resources.Frame2);
+            images.Add(Properties.Resources.Frame3);
+            images.Add(Properties.Resources.Frame4);
+            images.Add(Properties.Resources.Frame5);
+            images.Add(Properties.Resources.Уровень_3);
+
+            foreach (var el in images)
+            {
+                Form.BackgroundImage = el;
+                await Task.Delay(2500);
+                if (Form.Need == true)
+                {
+                    Form.Need = false;
+                    break;
+                }
+            }
+
+            Form.button16.Visible = false;
+            Form.button16.Enabled = false;
+
+            Form.GameThree();
+        }
     }
 }
